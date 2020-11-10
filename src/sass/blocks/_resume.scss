@@ -12,8 +12,9 @@
      @include before_circle; 
      &::before{
          left: 50%;
-         transform: translateX(-40%);
+         transform: translateX(-50%);
      }
+     padding-left: 0;
     }
     &__wrap{
         padding:65px 65px 0 65px;

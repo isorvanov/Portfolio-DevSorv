@@ -1,0 +1,54 @@
+.policy {
+    border: 2px solid;
+    margin: 5px 20px;
+    padding: 10px 20px;
+    h1 {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 60px;
+    }
+    h2 {
+        display: inline;
+        font-size: 18px;
+        line-height: 20px;
+        font-weight: bold;
+        
+    }
+    p {
+        font-size: 14px;
+        line-height: 21px;
+    }
+    ol {
+        /* убираем стандартную нумерацию */
+        list-style: none;
+        /* Идентифицируем счетчик и даем ему имя li. Значение счетчика не указано - по умолчанию оно равно 0 */
+        counter-reset: li;
+        
+    }
+    &__second-list {
+        margin-left: 20px;
+        margin-top: 10px;
+    
+        li, p, a { 
+            font-size: 14px;
+            line-height: 21px;
+        
+        }
+        li {
+            display: flex;
+        }
+        p {
+            margin-left: 10px;
+            
+        }
+        ol {}
+    }
+    li {
+        &::before {
+            /* Определяем элемент, который будет нумероваться — li. Псевдоэлемент before указывает, что содержимое, вставляемое при помощи свойства content, будет располагаться перед пунктами списка. Здесь же устанавливается значение приращения счетчика (по умолчанию равно 1). */
+            counter-increment: li;
+            /* С помощью свойства content выводится номер пункта списка. counters() означает, что генерируемый текст представляет собой значения всех счетчиков с таким именем. Точка в кавычках добавляет разделяющую точку между цифрами, а точка с пробелом добавляется перед содержимым каждого пункта списка */
+            content: counters(li, ".") ". ";
+        }
+    }
+}

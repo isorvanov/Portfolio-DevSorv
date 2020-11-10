@@ -1,0 +1,82 @@
+.skills {
+    padding-top: 120px;
+    .title {
+        text-align: center;
+    }
+
+    &__circle {
+        @include before_circle;
+        &::before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        padding-left: 0;
+    }
+    .line {
+        margin: 0 auto;
+        margin-top: 25px;
+    }
+    &__wrap {
+        padding: 0 10px;
+        display: grid;
+        margin-top: 60px;
+        grid-template-columns: repeat(4, minmax(270px, 1fr));
+        grid-template-rows: repeat(2, minmax(270px, 1fr));
+        gap: 13px 13px;
+        grid-auto-rows: minmax(245px, auto);
+    }
+    &__item {
+        border: 1px solid #000000;
+        padding: 30px 30px 25px 30px;
+        &-img {
+            width: 100%;
+            min-height: 65px;
+            display: flex;
+            align-self: center;
+            justify-content: flex-start;
+        }
+        img {
+            max-width: 210px;
+        }
+        .title {
+            margin: 20px 0 15px 0;
+            text-align: left;
+        }
+    }
+    &__circle-per {
+        @include before_circle;
+    }
+    &__percent {
+        margin-top: 120px;
+        display: grid;
+        grid-template: repeat(2, minmax(70px, 1fr)) / repeat(3, minmax(350px, 1fr));
+        gap: 30px 45px;
+        .title {
+            text-align: left;
+            margin: 0;
+            padding-top: 2px;
+        }
+        &-head {
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+            span {
+                padding-top: 2px;
+            }
+        }
+    }
+    &__divider{
+        margin-top: 27px;
+        position: relative;
+        
+    }
+    &__have {
+        background-color: $main-color;
+        height: 14px;
+        position: absolute;
+    }
+    &__nothave {
+        background-color:#E8E4DE;
+        height: 14px;
+    }
+}

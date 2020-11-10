@@ -4,7 +4,7 @@
         display: grid;
         padding-right: 100px;
         grid-template-columns: minmax(400px,400px) 1fr;
-        grid-template-rows: minmax(245px, auto) minmax(245, auto);
+        grid-template-rows: minmax(245px, auto) minmax(245px, auto);
         grid-auto-rows: minmax(245px, auto);
         column-gap: 70px;
         row-gap: 40px;
@@ -14,6 +14,8 @@
         grid-row-end: 3;
         img {
             max-width: 400px;
+            height: 100%;
+            object-fit: cover;
         }
     }
     &__circle {
